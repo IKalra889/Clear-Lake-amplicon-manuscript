@@ -58,7 +58,7 @@ ggplot(data=df, aes(x=Index, y=LibrarySize, color=Type)) + geom_point()
 
 sample_data(clear_bac)$is.neg <- sample_data(clear_bac)$Type == "Control"
 contamdf <- isContaminant(clear_bac, method="prevalence", neg="is.neg", threshold=0.5)
-table(contamdf$contaminant) # 13 contaminants were identifued
+table(contamdf$contaminant) # 13 contaminants were identified
 which(contamdf$contaminant) # decontaminating OTU indexes
 #73  100  482 1639 1967 4633 4968 5407 5646 5738 7518 7569 8293
 
