@@ -46,7 +46,6 @@ mc <- sample_info %>%
   annotate("text", x= as.character("Upper Arm") ,y=7.0, label="Warning", color = "red")+
   annotate("text", x= as.character("Upper Arm") ,y=21.0, label="Danger", color = "red")+
   theme_bw()
-mc+chl
 
 ##Fig. 1C - chlorophyll graph
 
@@ -58,8 +57,6 @@ chl <- sample_info %>% group_by(Name) %>% mutate(chl = mean(Chlorophyll.a)) %>%
   geom_hline(yintercept = 73, linetype = 2, color = "firebrick")+
   scale_y_continuous(breaks = c(0, 73, 100, 200, 300, 400))+
   theme_bw()
-
-chl
 
 #combine plots and display
 fig1 <- mc+chl
